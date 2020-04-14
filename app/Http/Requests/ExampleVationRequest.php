@@ -23,15 +23,19 @@ class ExampleVationRequest extends FormRequest
 
     /*
      * Prepare the data for validation.
-     *
+     * Esta función permite saber que es lo que el usuario está 
+     * enviando como datos antes de realizar la validación
      * @return void
      */
     protected function prepareForValidation()
     {
+        // Ver dentro de los logs de Laravel el Valor de title
         info('Este es el titulo:');
+        info($this->title);
 
+        // Ejemplo de como manipular los datos 
         $this->title = 'Titulo: ' . $this->title;
-
+        info('Este es el titulo Modificado:');
         info($this->title);
     }
 

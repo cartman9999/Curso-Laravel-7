@@ -21,7 +21,7 @@ use Validator;
  * archivo con la sentencia:
  * 		use App\Http\Request\NombreDelArchivoRequest;
  * 
- * 3) Hace inyección de dependencias dentro de la 
+ * 3) Hacer inyección de dependencias dentro de la 
  * función que queramos validar
  * 
  * 4) Dentro del Form Request modificar el valor de la función
