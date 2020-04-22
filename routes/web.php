@@ -19,7 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+// Clase 2) Modelos (accesors y  mutators)
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/mutator', 'HomeController@update');
 
+// Clase 1) Form Request
 Route::get('/validator-fails', 'RequestValidationController@validatorFailure');
 Route::post('/request-validation', 'RequestValidationController@primerEjemplo');

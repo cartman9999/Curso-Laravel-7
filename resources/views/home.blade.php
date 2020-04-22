@@ -14,7 +14,13 @@
                         </div>
                     @endif
 
-                    You are logged in!
+                    You are logged in 
+                    {{-- {{ $user->name . ' ' . $user->second_name . ' ' . $user->last_name}}  --}}
+                    {{ $user->fullName }}!
+                    <br>
+                    <p>
+                        <strong>Mutator</strong> Apellido: {{ $user->last_name }}
+                    </p>
                 </div>
             </div>
         </div>

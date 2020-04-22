@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'second_name', 'last_name', 'email', 'card_number', 'birthday', 'password',
     ];
 
     /**
@@ -25,7 +25,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'card_number', 'password', 'remember_token',
     ];
 
     /**
@@ -36,4 +36,28 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    
+    /**
+     * Accesors
+     * Sirven para alterar la manera en que se despliegan los datos
+     * sintaxis para declararlos: getNombreDeMiAccesorAttribute
+     * sintaxis para utilizar: $modelo->nombreDeMiAccesor
+     */
+    public function getFullNameAttribute() {
+        return "{$this->name} {$this->second_name} {$this->last_name}";
+    }
+
+    /**
+    * Mutators
+    * Sirven para alterar la manera en la que se guarda un registro
+    * en una columna de la tabla en especifico
+    * sintaxis para declararlos: setNombreDeMiMutatorAtrribute
+    * 
+    * Dentro de la función se agrega el nombre de la columna que queremos afectar
+    * Nota: el modelo por si llamada al mutator, no hay que hacer nada más
+    */
+    public function setLastNameAttribute($value) {
+        $this->attributes['last_name'] = strtoupper($value);
+    }
 }
