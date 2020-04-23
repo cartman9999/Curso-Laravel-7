@@ -62,5 +62,12 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        /**
+        * Este el el Middleware creado para el ejemplo
+        * Como llave pondremos el nombre con el cual queremos invocarlo
+        * Como valor se agrega la ruta de la Clase
+        */
+        'verifyAge' => \App\Http\Middleware\VerifyAge::class, 
     ];
 }
