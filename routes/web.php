@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Gate;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,21 @@ Route::namespace('Movies')
 			});
 
 Route::get('/peliculas/comedia/{subgenero}', 'Movies/MoviesController@showComedyMovies')->name('comedia')->middleware('auth');
+
+// Clases 4,5,6) Intro a Refactorizacion con Guard Clauses y Autorizacion con Gates y Policies
+
+// Uso de Gates y Service Layer Design Pattern
+Route::get('/guard', 'GuardController@getPromotion'); 
+
+// Uso de Policies
+Route::get('/premium', 'GuardController@indexPremium')->name('premium');
+
+// 
+Route::prefix('/post')
+		->name('post.')
+		->group(function() {
+							    Route::post('/index', 'PostController@index')->name('index');
+							    Route::post('/create', 'PostController@create')->name('create');
+							    Route::post('/update', 'PostController@update')->name('update');
+							    Route::post('/delete', 'PostController@delete')->name('delete');
+							});

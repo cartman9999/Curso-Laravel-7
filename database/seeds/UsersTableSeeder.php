@@ -26,8 +26,42 @@ class UsersTableSeeder extends Seeder
         				'email' 		=> 'eric.mdoj8@gmail.com',
         				'card_number'	=> '1234567809871234',
         				'birthday' 		=> '1994-02-25 00:00:01',
-        				'password' 		=> bcrypt('PasswordEric#2')
+        				'password' 		=> bcrypt('PasswordEric#2'),
+                        'role_id'       => 1
         			]);
+
+        User::create([
+                        'name'          => 'Eric',
+                        'second_name'   => 'Montes de Oca',
+                        'last_name'     => 'Juarez',
+                        'email'         => 'eric.mdoj82@gmail.com',
+                        'card_number'   => '1234567809871234',
+                        'birthday'      => '1994-02-25 00:00:01',
+                        'password'      => bcrypt('PasswordEric#2'),
+                        'role_id'       => 2
+                    ]);
+
+        User::create([
+                        'name'          => 'Eric',
+                        'second_name'   => 'Montes de Oca',
+                        'last_name'     => 'Juarez',
+                        'email'         => 'eric.mdoj83@gmail.com',
+                        'card_number'   => '1234567809871234',
+                        'birthday'      => '1994-02-25 00:00:01',
+                        'password'      => bcrypt('PasswordEric#2'),
+                        'role_id'       => 3
+                    ]);
+
+        User::create([
+                        'name'          => 'Eric',
+                        'second_name'   => 'Montes de Oca',
+                        'last_name'     => 'Juarez',
+                        'email'         => 'eric.mdoj84@gmail.com',
+                        'card_number'   => '1234567809871234',
+                        'birthday'      => '1994-02-25 00:00:01',
+                        'password'      => bcrypt('PasswordEric#2'),
+                        'role_id'       => 4
+                    ]);
 
         /** 
          * Insert: genera el registro añadiendo sólo los campos especificados
@@ -41,7 +75,8 @@ class UsersTableSeeder extends Seeder
         				'email' 		=> 'eric.mdoj28@gmail.com',
         				'card_number'	=> '1234567809871234',
         				'birthday' 		=> '1994-02-25 00:00:01',
-        				'password' 		=> bcrypt('PasswordEric#2')
+        				'password' 		=> bcrypt('PasswordEric#2'),
+                        'role_id'       => 1
         			]);
     }
 }

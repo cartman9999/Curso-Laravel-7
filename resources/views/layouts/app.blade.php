@@ -49,6 +49,9 @@
                                 </li>
                             @endif
                         @else
+                            @can('view', \App\User::class)
+                                <a class="nav-link" href="{{ route('premium') }}" role="button">Premium</a>
+                            @endcan
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>

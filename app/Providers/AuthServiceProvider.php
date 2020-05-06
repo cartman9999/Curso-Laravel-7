@@ -4,6 +4,10 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
+use Illuminate\Http\Request;
+
+use App\User;
+use App\Policies\PremiumPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -14,6 +18,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     protected $policies = [
         // 'App\Model' => 'App\Policies\ModelPolicy',
+        User::class => PremiumPolicy::class
     ];
 
     /**
@@ -25,6 +30,12 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+        Gate::define('premium', function($user){
+            return $user->role_id == 1;                 
+        });
+
+        Gate::define('day', function($user, $current_day, $day){
+            return $current_day == $day;                 
+        });
     }
 }

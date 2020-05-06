@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('card_number');
             $table->datetime('birthday');
             $table->string('password');
+            $table->integer('role_id');
             $table->rememberToken();
             $table->timestamps();
         });
